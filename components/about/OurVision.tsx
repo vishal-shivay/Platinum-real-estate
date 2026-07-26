@@ -7,7 +7,7 @@ export default function OurVision() {
       <style>{`
         .ov-section {
           background-color: #f5f5f3;
-          padding: 0px 60px 80px;
+          padding: 60px 60px 80px;
         }
         .ov-grid {
           display: flex;
@@ -25,7 +25,7 @@ export default function OurVision() {
           font-size: 32px;
           font-weight: 700;
           color: #c8102e;
-          margin: 0 0 20px 0;
+          margin: 0 0 28px 0;
           text-align: center;
         }
         .ov-img-wrap {
@@ -45,7 +45,7 @@ export default function OurVision() {
         }
         .ov-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          font-size: 16.5px;
+          font-size: 15px;
           color: #43536b;
           line-height: 1.5;
           text-align: center;
