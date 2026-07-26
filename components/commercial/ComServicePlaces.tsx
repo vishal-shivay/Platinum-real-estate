@@ -130,7 +130,7 @@ export default function ComServicePlaces() {
                     <button className="rp-arrow" onClick={() => next(pi)}>&#10095;</button>
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
           );
         })}
