@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useEffect, useMemo, useState, useCallback } from "react";
 
 const customers = [
-  { img: "/images/first.jpg",  name: "Mr. Karan Mehta" },
-  { img: "/images/second.jpg", name: " Ms. Anjali Verma" },
-  { img: "/images/third.jpg",  name: "Mr. Rajat Sood" },
-  { img: "/images/fourth.jpg", name: "Ms. Priyanshu Nair" },
-  { img: "/images/fifth.jpg",  name: "Mr. Devansh Rao" },
+  { img: "/images/first-test.jpeg",  name: "Komal and Pardeep" },
+  { img: "/images/second-test.jpeg", name: "Sanchita Ratta" },
+  { img: "/images/third-test.jpeg",  name: "Rachit Dua" },
+  { img: "/images/fourth-test.jpeg", name: "Parveen Mehndiratta" },
+  { img: "/images/fifth-test.jpeg",  name: "Jagdish Juneja" },
 ];
 
 const AUTO_ROTATE_MS = 3500;

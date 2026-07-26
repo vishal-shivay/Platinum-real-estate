@@ -7,7 +7,7 @@ export default function OurMission() {
       <style>{`
         .om-section {
           background-color: #f5f5f3;
-          padding: 60px 60px 80px;
+          padding: 0px 60px 0px;
         }
         .om-grid {
           display: flex;
@@ -24,7 +24,7 @@ export default function OurMission() {
         }
         .om-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          font-size: 15px;
+          font-size: 16.5px;
           color: #43536b;
           line-height: 1.5;
           text-align: center;
@@ -41,7 +41,7 @@ export default function OurMission() {
           font-weight: 700;
           color: #c8102e;
           text-align: center;
-          margin: 0 0 28px 0;
+          margin: 0 0 20px 0;
         }
         .om-img-wrap {
           position: relative;

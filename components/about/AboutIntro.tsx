@@ -61,22 +61,22 @@ export default function AboutSection() {
           flex: 1;
           display: flex;
           flex-direction: column;
-          gap: 86px;
+          gap: 46px;
           padding: 44px 34px 44px 20px;
           position: relative;
           z-index: 2;
-          margin-top:100px;
+          margin-top:50px;
         }
         .about-panel {
-          width: 90%;
+          width: 92.1%;
           background: rgba(26,24,24,0.90);
           border: 1px solid rgba(200,169,110,0.22);
           padding: 22px 26px;
           text-align: center;
         }
-        .about-panel p { font-family: Montserrat, sans-serif; margin: 0; font-size: 15.9px; color: #b5b0a6; line-height: 1.85; }
-        .panel-big-red { font-size: 28px; font-weight: 700; color: #D7172A; font-family: "Playfair Display", serif; line-height: 1.1; display: inline; }
-        .panel-big-red-sm { font-family: "Playfair Display", serif; font-size: 28px; font-weight: 700; color: #D7172A; line-height: 1.1; display: inline; }
+        .about-panel p { font-family: Montserrat, sans-serif; margin: 0; font-size: 17px; color: #b5b0a6; line-height: 1.5; }
+        .panel-big-red { font-size: 22px; font-weight: 700; color: #D7172A; font-family: "Playfair Display", serif; line-height: 1.1; display: inline; }
+        .panel-big-red-sm { font-family: "Playfair Display", serif; font-size: 22px; font-weight: 700; color: #D7172A; line-height: 1.1; display: inline; }
 
         @media (max-width: 1024px) and (min-width: 481px) {
           .about-section { min-height: 0; flex-direction: column; }
@@ -135,7 +135,7 @@ export default function AboutSection() {
           </div>
           <div className="about-panel">
             <p>
-              Our commitment to transparency, integrity, and client satisfaction has earned us the trust of homeowners, buyers, sellers, and investors alike. Whether you're looking for your
+              Our commitment to transparency, integrity, and client satisfaction has earned us the trust of homeowners, buyers, sellers, and investors alike. Whether you're looking for your <br />
               <span className="panel-big-red-sm"> dream home, or a commercial space,</span> we strive to deliver exceptional service, valuable insights, and lasting relationships built on trust and professionalism.
             </p>
           </div>
