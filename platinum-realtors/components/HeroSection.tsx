@@ -10,9 +10,9 @@ export default function HeroSection() {
           position: relative;
           width: 100%;
           height: 100vh;
-          min-height: 600px;
+          min-height: 600px; 
           overflow: hidden;
-        }
+        }  
 
         .hero-overlay {
           position: absolute;
