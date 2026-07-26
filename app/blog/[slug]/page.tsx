@@ -1,11 +1,17 @@
 import { connectDB } from "@/lib/mongodb";
 import BlogPost from "@/models/BlogPost";
 import { notFound } from "next/navigation";
+import { after } from "next/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+import Link from "next/link";
 import InquiryForm from "./InquiryForm";
 
-export const revalidate = 0;
+// Cache the rendered page for 60s instead of hitting the DB on every request.
+// The view-count write happens separately (see `after` below) so it never
+// blocks or bypasses this cache.
+export const revalidate = 60;
 
 export default async function BlogPostPage({
   params,
@@ -16,26 +22,43 @@ export default async function BlogPostPage({
 
   await connectDB();
 
-  const post = await BlogPost.findOneAndUpdate(
-    { slug, status: "published" },
-    { $inc: { viewCount: 1 } },
-    { returnDocument: "after" }
-  ).lean();
+  // Read-only query — fetch only the fields this page actually renders,
+  // and no $inc write here, so this can be served from cache.
+  const post = await BlogPost.findOne({ slug, status: "published" })
+    .select("title slug category featuredImage content publishedAt")
+    .lean();
 
   if (!post) notFound();
+
+  // Fire the view-count increment after the response has been sent,
+  // so it never adds latency to the page load itself.
+  after(async () => {
+    await BlogPost.updateOne({ _id: post._id }, { $inc: { viewCount: 1 } });
+  });
 
   return (
     <>
       <Navbar />
       <div style={styles.page}>
         <article style={styles.container}>
+          <Link href="/blog" style={styles.backLink}>
+            &larr; Back to all posts
+          </Link>
+
           <span style={styles.category}>{post.category}</span>
           <h1 style={styles.title}>{post.title}</h1>
           <div style={styles.accentLine} />
 
           {post.featuredImage && (
             <div style={styles.imageWrap}>
-              <img src={post.featuredImage} alt={post.title} style={styles.image} />
+              <Image
+                src={post.featuredImage}
+                alt={post.title}
+                width={760}
+                height={420}
+                priority
+                style={styles.image}
+              />
             </div>
           )}
 
@@ -71,6 +94,14 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "220px 0 64px",
   },
   container: { maxWidth: 760, margin: "0 auto", padding: "0 24px" },
+  backLink: {
+    display: "inline-block",
+    color: "#d99a9a",
+    fontSize: 14,
+    textDecoration: "none",
+    marginBottom: 28,
+    padding: "8px 0",
+  },
   category: {
     display: "block",
     fontSize: 12,
