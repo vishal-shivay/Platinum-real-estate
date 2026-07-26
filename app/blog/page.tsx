@@ -153,7 +153,7 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#f5f0e8",
     marginBottom: 24,
     borderLeft: "4px solid #c9302c",
-    paddingLeft: 14,
+    paddingLeft: 14,   
   },
   grid: {
     display: "grid",
