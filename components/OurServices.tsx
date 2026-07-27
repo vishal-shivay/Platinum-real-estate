@@ -170,7 +170,7 @@ export default function OurServices() {
 
         .services {
           position: relative;
-          padding: 120px 0 130px;
+          padding: 20px 0 30px;
           background: #F0F0F0;
           overflow: hidden;
         }
@@ -354,6 +354,26 @@ export default function OurServices() {
           margin-bottom: 12px; padding-bottom: 16px;
           border-bottom: 1px solid rgba(20,18,15,0.1);
         }
+          .service-body-top {
+  position: relative;
+}
+
+.service-body-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 15%,
+    #D7172A 50%,
+    #ffffff 85%,
+    #ffffff 100%
+  );
+}
         .service-title {
           font-family: "Playfair Display", serif;
           font-weight: 500; font-size: 23px; color: var(--ink);

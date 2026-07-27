@@ -440,19 +440,19 @@ export default function ContactInfo() {
               <div className="contact-info__collage">
                 <div className="contact-info__arch contact-info__arch--large">
                   <img
-                    src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80"
+                    src="/images/contact-large.jpg"
                     alt="Luxury bedroom interior"
                   />
                 </div>
                 <div className="contact-info__arch contact-info__arch--medium">
                   <img
-                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&q=80"
+                    src="/images/contact-medium.jpg"
                     alt="Interior with gallery wall"
                   />
                 </div>
                 <div className="contact-info__arch contact-info__arch--small">
                   <img
-                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80"
+                    src="/images/contact-small.jpg"
                     alt="Decorative interior niche"
                   />
                 </div>

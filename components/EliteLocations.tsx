@@ -7,11 +7,11 @@ import Link from "next/link";
 // slots the original slider had nothing to slide between. Swap for real data;
 // everything below works for any count >= 1.
 const locationData = [
-  { id: 1, name: "Mohali", pin: "PIN-01", coords: "30.7046° N", image: "/images/mohali.jpg" },
-  { id: 2, name: "Zirakpur", pin: "PIN-02", coords: "30.6425° N", image: "/images/zirkpur.jpg" },
-  { id: 3, name: "Dholera", pin: "PIN-03", coords: "22.2470° N", image: "/images/dholera.jpg", href: "/dholera" },
-  { id: 4, name: "Mohali", pin: "PIN-01", coords: "30.7046° N", image: "/images/mohali.jpg" },
-  { id: 5, name: "Zirakpur", pin: "PIN-02", coords: "30.6425° N", image: "/images/zirkpur.jpg" },
+  { id: 1, name: "Mohali", pin: "", coords: "", image: "/images/mohali.jpg" },
+  { id: 2, name: "Zirakpur", pin: "", coords: "", image: "/images/zirkpur.jpg" },
+  { id: 3, name: "Dholera", pin: "", coords: "", image: "/images/dholera.jpg", href: "/dholera" },
+  { id: 4, name: "Mohali", pin: "", coords: "", image: "/images/mohali.jpg" },
+  { id: 5, name: "Zirakpur", pin: "", coords: "", image: "/images/zirkpur.jpg" },
 
   // { id: 4, name: "Chandigarh", pin: "PIN-04", coords: "30.7333° N", image: "/images/mohali.jpg" },
   // { id: 5, name: "New Chandigarh", pin: "PIN-05", coords: "30.7891° N", image: "/images/zirkpur.jpg" },
@@ -229,7 +229,7 @@ export default function Locations() {
           display: flex; justify-content: space-between; align-items: flex-start;
           font-family: 'Montserrat', monospace; font-size: 10px; letter-spacing: 1.5px; color: rgba(244,239,230,0.75);
         }
-        .location-card-meta .pin { border: 1px solid rgba(215,23,42,0.55); color: #ff5b6a; padding: 4px 9px; border-radius: 2px; }
+       
         .location-card-meta .coords { opacity: 0.7; }
 
         .location-card-footer { position: relative; z-index: 2; padding: 20px 20px 22px; background:white;}
