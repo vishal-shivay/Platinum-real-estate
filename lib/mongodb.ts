@@ -3,8 +3,6 @@ import mongoose from "mongoose";
 
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
-const MONGODB_URI = process.env.MONGODB_URI;
-
 interface MongooseCache {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
@@ -23,6 +21,8 @@ if (!global.mongooseCache) {
 
 export async function connectDB() {
   if (cached.conn) return cached.conn;
+
+  const MONGODB_URI = process.env.MONGODB_URI;
 
   if (!MONGODB_URI) {
     throw new Error("Missing MONGODB_URI in environment variables");

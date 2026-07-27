@@ -15,6 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="LKpr3VGmlXF8fY2yFnrrW5CyI9yiq_9q1-YX8luB7lE" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
           rel="stylesheet"
