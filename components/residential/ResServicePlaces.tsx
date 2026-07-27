@@ -12,6 +12,7 @@ const projects = [
   //   images: ["/images/affinity1.jpg", "/images/affinity2.jpg", "/images/affinity3.jpg", "/images/affinity4.jpg"],
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
+  //   rera: "PBRERA-SAS79-PR0844",
   // },
   // {
   //   id: 2,
@@ -21,6 +22,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS81-PR0748",
   // },
 
   // {    id: 3,
@@ -30,6 +32,7 @@ const projects = [
   //   images: ["/images/affinity1.jpg", "/images/affinity2.jpg", "/images/affinity3.jpg", "/images/affinity4.jpg"],
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
+  //   rera: "PBRERA-SAS81-PR1006",
   // },
   {
     id: 4,
@@ -39,6 +42,7 @@ const projects = [
     images: ["/images/Premium-apartments-in-Mohali 1.jpeg", "/images/Premium-apartments-in-Mohali 2.jpeg", "/images/Premium-apartments-in-Mohali 3.jpeg", "/images/Premium-apartments-in-Mohali 4.jpeg", "/images/Premium-apartments-in-Mohali 5.jpeg", "/images/Premium-apartments-in-Mohali 6.jpeg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS81-PR0866", // TODO: confirm this is the correct project for this number
   },
   //  {
   //   id: 5,
@@ -48,6 +52,7 @@ const projects = [
   //   images: ["/images/affinity1.jpg", "/images/affinity2.jpg", "/images/affinity3.jpg", "/images/affinity4.jpg"],
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
+  //   rera: "PBRERA-SAS81-PR0757",
   // },
   // {
   //   id: 6,
@@ -57,6 +62,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS81-PR0889",
   // },
 
   {    id: 7,
@@ -66,6 +72,7 @@ const projects = [
     images: ["/images/Medallion1.jpeg", "/images/Medallion2.jpeg", "/images/Medallion3.jpeg", "/images/Medallion4.jpeg", "/images/Medallion5.jpeg", "/images/Medallion6.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS81-PR0685", // TODO: add RERA number
   },
   // {
   //   id: 8,
@@ -75,6 +82,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS81-PR0928",
   // },
    {
     id: 9,
@@ -84,6 +92,7 @@ const projects = [
     images: ["/images/Noble1.jpeg", "/images/Noble2.jpeg", "/images/Noble3.jpeg", "/images/Noble6.jpeg", "/images/Noble5.jpeg", "/images/Noble4.jpeg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS81-PR1136", // TODO: add RERA number
   },
  
   // {
@@ -94,6 +103,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS81-PR0813",
   // },
 
   // {    id: 11,
@@ -103,6 +113,7 @@ const projects = [
   //   images: ["/images/affinity1.jpg", "/images/affinity2.jpg", "/images/affinity3.jpg", "/images/affinity4.jpg"],
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
+  //   rera: "PBRERA-SAS81-PM0003, PBRERA-SAS81-PR0404, PBRERA-SAS81-PR0428, and PBRERA-SAS81-PR1097",
   // },
     {
     id: 12,
@@ -112,6 +123,7 @@ const projects = [
     images: ["/images/Bliss1.jpeg", "/images/Bliss2.jpeg", "/images/Bliss3.jpeg", "/images/Bliss4.jpeg", "/images/Bliss5.jpeg",  "/images/Bliss6.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS81-PR0863", // TODO: add RERA number
   },
  
     {    id: 13,
@@ -121,6 +133,7 @@ const projects = [
     images: ["/images/Magnollia1.jpeg", "/images/Magnollia2.jpeg", "/images/Magnollia3.jpeg", "/images/Magnollia4.jpeg", "/images/Magnollia5.jpeg", "/images/Magnollia6.jpeg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS81-PR1294", // TODO: add RERA number
   },
   {
     id: 14,
@@ -130,6 +143,7 @@ const projects = [
     images: ["/images/Lotus1.jpeg", "/images/Lotus2.jpeg", "/images/Lotus3.jpeg", "/images/Lotus4.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS79-PR0425", // TODO: add RERA number
   },
 
   {    id: 15,
@@ -139,6 +153,7 @@ const projects = [
     images: ["/images/Luxury-apartments-in-Zirakpur 29.jpeg", "/images/Luxury-apartments-in-Zirakpur 30.jpeg", "/images/Luxury-apartments-in-Zirakpur 31.jpeg", "/images/Luxury-apartments-in-Zirakpur 32.jpeg", "/images/Luxury-apartments-in-Zirakpur 33.jpeg", "/images/Luxury-apartments-in-Zirakpur 34.jpeg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS79-PR0893", // TODO: add RERA number
   },
   // {
   //   id: 16,
@@ -148,6 +163,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS79-PR0976",
   // },
    {
     id: 17,
@@ -157,6 +173,7 @@ const projects = [
     images: ["/images/Luxury-flats-in-Zirakpur 38.jpeg", "/images/Luxury-flats-in-Zirakpur 36.jpeg", "/images/Luxury-flats-in-Zirakpur 37.jpeg", "/images/Luxury-flats-in-Zirakpur 40.jpeg", "/images/Luxury-flats-in-Zirakpur 39.jpeg", "/images/Luxury-flats-in-Zirakpur 35.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS79-PR0529 for Phase 1 and PBRERA-SAS79-PR0852 for Phase 2", // TODO: add RERA number
   },
   {
     id: 18,
@@ -166,6 +183,7 @@ const projects = [
     images: ["/images/Luxury-flats-in-Zirakpur 41.jpeg", "/images/Luxury-flats-in-Zirakpur 42.jpeg", "/images/Luxury-flats-in-Zirakpur 43.jpeg", "/images/Luxury-flats-in-Zirakpur 44.jpeg", "/images/Luxury-flats-in-Zirakpur 45.jpeg", "/images/Luxury-flats-in-Zirakpur 46.jpeg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS79-PR0777", // TODO: add RERA number
   },
 
   {    id: 19,
@@ -175,6 +193,7 @@ const projects = [
     images: ["/images/Premium-apartments-in-Zirakpur 47.jpeg", "/images/Premium-apartments-in-Zirakpur 48.jpeg", "/images/Premium-apartments-in-Zirakpur 49.jpeg", "/images/Premium-apartments-in-Zirakpur 50.jpeg", "/images/Premium-apartments-in-Zirakpur 51.jpeg", "/images/Premium-apartments-in-Zirakpur 52.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS79-PR0931", // TODO: add RERA number
   },
   {
     id: 20,
@@ -184,6 +203,7 @@ const projects = [
     images: ["/images/Luxury-flats-in-Zirakpur 65.jpeg", "/images/Luxury-flats-in-Zirakpur 66.jpeg", "/images/Luxury-flats-in-Zirakpur 67.jpeg", "/images/Luxury-flats-in-Zirakpur 68.jpeg", "/images/Luxury-flats-in-Zirakpur 69.jpeg", "/images/Luxury-flats-in-Zirakpur 70.jpeg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS79-PR0996", // TODO: add RERA number
   },
    {
     id: 21,
@@ -193,6 +213,7 @@ const projects = [
     images: ["/images/Premium-flats-in-Zirakpur 59.jpeg", "/images/Premium-flats-in-Zirakpur 60.jpeg", "/images/Premium-flats-in-Zirakpur 61.jpeg", "/images/Premium-flats-in-Zirakpur 62.jpeg", "/images/Premium-flats-in-Zirakpur 63.jpeg", "/images/Premium-flats-in-Zirakpur 64.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS79-PR0817", // TODO: add RERA number
   },
   {
     id: 22,
@@ -202,6 +223,7 @@ const projects = [
     images: ["/images/Arvindam1.jpg", "/images/Arvindam2.jpg", "/images/Arvindam3.jpg", "/images/Arvindam4.jpg", "/images/Arvindam5.jpg", "/images/Arvindam6.jpg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS79-PR1018", // TODO: add RERA number
   },
 
   // {    id: 23,
@@ -211,6 +233,7 @@ const projects = [
   //   images: ["/images/affinity1.jpg", "/images/affinity2.jpg", "/images/affinity3.jpg", "/images/affinity4.jpg"],
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
+  //   rera: "PBRERA-SAS79-PR0546",
   // },
   {
     id: 24,
@@ -220,6 +243,7 @@ const projects = [
     images: ["/images/Premium-flats-in-Zirakpur 53.jpeg", "/images/Premium-flats-in-Zirakpur 54.jpeg", "/images/Premium-flats-in-Zirakpur 55.jpeg", "/images/Premium-flats-in-Zirakpur 56.jpeg", "/images/Premium-flats-in-Zirakpur 57.jpeg", "/images/Premium-flats-in-Zirakpur 58.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS79-PR0868", // TODO: add RERA number
   },
     {    id: 25,
     location: "",
@@ -228,6 +252,7 @@ const projects = [
     images: ["/images/Vintage1.png", "/images/Vintage2.jpg", "/images/Vintage3.jpg", "/images/Vintage4.jpg", "/images/Vintage5.jpg", "/images/Vintage6.jpg"],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "PBRERA-SAS79-PR1181", // TODO: add RERA number
   },
   // {
   //   id: 26,
@@ -237,6 +262,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS79-PR1288",
   // },
     {    id: 27,
     location: "",
@@ -245,6 +271,7 @@ const projects = [
     images: ["/images/Luxury-apartments-in-Zirakpur 71.jpeg", "/images/Luxury-apartments-in-Zirakpur 72.jpeg", "/images/Luxury-apartments-in-Zirakpur 73.jpeg", "/images/Luxury-apartments-in-Zirakpur 74.jpeg", "/images/Luxury-apartments-in-Zirakpur 75.jpeg", "/images/Luxury-apartments-in-Zirakpur 76.jpeg"],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "PBRERA-SAS79-PR1218", // TODO: add RERA number
   },
   //   {
   //   id: 28,
@@ -254,6 +281,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "PBRERA-SAS79-PR1134",
   // },
 
 
@@ -266,6 +294,7 @@ const projects = [
   //   images: ["/images/noble1.png", "/images/noble2.jpg", "/images/noble3.png", "/images/noble4.jpg"],
   //   theme: "red",
   //   bgImage: "/images/noble-bg.png",
+  //   rera: "",
   // },
   //  {    id: 30,
   //   location: "",
@@ -274,6 +303,7 @@ const projects = [
   //   images: ["/images/affinity1.jpg", "/images/affinity2.jpg", "/images/affinity3.jpg", "/images/affinity4.jpg"],
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
+  //   rera: "",
   // },
     {    id: 31,
     location: "",
@@ -282,6 +312,7 @@ const projects = [
     images: ["/images/Spazia1.jpeg","/images/Spazia2.jpeg", "/images/Spazia3.jpeg", "/images/Spazia4.jpeg", "/images/Spazia5.jpeg", "/images/Spazia6.jpeg",  ],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "", // TODO: add RERA number
   },
     {    id: 32,
     location: "",
@@ -290,6 +321,7 @@ const projects = [
     images: ["/images/Serene1.jpeg","/images/Serene2.jpeg","/images/Serene3.jpeg","/images/Serene4.jpeg","/images/Serene5.jpeg","/images/Serene6.jpeg" ],
     theme: "dark",
     bgImage: "/images/affinity-bg.png",
+    rera: "", // TODO: add RERA number
   },
     {    id: 33,
     location: "",
@@ -298,6 +330,7 @@ const projects = [
     images: ["/images/Homez1.jpeg", "/images/Homez2.jpeg","/images/Homez3.jpeg","/images/Homez4.jpeg","/images/Homez5.jpeg","/images/Homez6.jpeg" ],
     theme: "red",
     bgImage: "/images/noble-bg.png",
+    rera: "", // TODO: add RERA number
   }
 ];
 
@@ -543,6 +576,23 @@ export default function ResServicePlaces() {
         .rp-location-btn:hover { background: #ff2d3f; transform: translateY(-1px); }
         .rp-location-btn:active { transform: translateY(0); }
 
+        /* ---------- RERA registration number, bottom-left of each card ---------- */
+        .rp-rera {
+          position: absolute;
+          right: 20px;
+          top: 14px;
+          z-index: 5;
+          font-family: "Montserrat", sans-serif;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          color: rgba(255, 255, 255, 0.92);
+          text-transform: uppercase;
+          background: rgba(0, 0, 0, 0.45);
+          padding: 5px 10px;
+          border-radius: 3px;
+        }
+
         @media(max-width:1200px){ .rp-card{ height:auto; padding-bottom:40px; } .rp-images{ flex-wrap:wrap; } }
         @media(max-width:992px){ .rp-location{ font-size:38px; } .rp-title{ font-size:28px; } .rp-description{ font-size:14px; width:95%; } .rp-image-box{ width:210px; height:160px; } }
         @media(max-width:768px){
@@ -556,6 +606,7 @@ export default function ResServicePlaces() {
            .rp-images{ width:100%; justify-content:center; gap:14px; }
             .rp-image-box{ width:46%; height:180px; } 
             .rp-description{ text-align:center; width:100%; } 
+            .rp-rera{ right:10px; top:10px; font-size:9px; padding:4px 8px; }
             }
         @media(max-width:480px){.rp-image-box{ width:46%; height:130px; }  .rp-location{ font-size:26px; } .rp-title{ font-size:24px; } .rp-description{ font-size:13px; line-height:1.6; }  }
       `}</style>
@@ -600,6 +651,9 @@ export default function ResServicePlaces() {
                   </div>
                
                 </div>
+                {project.rera && (
+                  <div className="rp-rera">RERA No: {project.rera}</div>
+                )}
               </div>
             </div>
           );

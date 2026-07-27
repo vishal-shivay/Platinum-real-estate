@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const carouselImages = [
-  "/dholera/interior-1.jg",
+  "/dholera/interior-1.jpg",
 
 ];
 
@@ -27,16 +27,16 @@ const propertyGroups: PropertyGroup[] = [
     sectionIntro:
       'Secure 100% RERA-approved, NA-cleared residential plots within master-planned gated communities featuring "plug-and-play" underground utilities and 40% dedicated green spaces. Strategically positioned near the Ahmedabad Expressway and high-tech semiconductor zones, these secure-title layouts offer the perfect blend of premium lifestyle amenities and high-yield capital appreciation.',
     sizes: [
-      { size: "207 Sq. Yds." },
-      { size: "90 Sq. Yds." },
-      { size: "137 Sq. Yds.", highlight: true },
+      { size: "203 Sq. Yds." },
+      { size: "111 Sq. Yds." },
+      { size: "225 Sq. Yds.", highlight: true },
     ],
   },
   {
     label: "Dholera SIR",
     sizes: [
-      { size: "388 Sq. Yds." },
-      { size: "1000 Sq. Yds.", highlight: true },
+      { size: "588 Sq. Yds." },
+      { size: "1900 Sq. Yds.", highlight: true },
     ],
   },
   {
@@ -45,7 +45,7 @@ const propertyGroups: PropertyGroup[] = [
     sectionIntro:
       "Large-format industrial plots in Dholera Special Investment Region designed for manufacturing, logistics, and commercial enterprise with world-class infrastructure.",
     sizes: [
-      { size: "2000 Sq. Yds.", highlight: true },
+      { size: "1200 Sq. Yds.", highlight: true },
       { size: "4000 Sq. Yds." },
     ],
   },
@@ -91,13 +91,13 @@ function PlotCarousel({
   return (
     <div className="dh-carousel">
 
-      <button
-        className="dh-arrow dh-arrow-left"
-        onClick={prev}
-        aria-label="Previous"
-      >
-        &#10094;
-      </button>
+  <button
+  className="dh-arrow dh-arrow-left"
+  onClick={prev}
+  aria-label="Previous"
+>
+  <span className="dh-arrow-triangle dh-arrow-triangle-left" />
+</button>
 
       <div className="dh-images-wrapper">
 
@@ -119,13 +119,13 @@ function PlotCarousel({
 
       </div>
 
-      <button
-        className="dh-arrow dh-arrow-right"
-        onClick={next}
-        aria-label="Next"
-      >
-        &#10095;
-      </button>
+     <button
+  className="dh-arrow dh-arrow-right"
+  onClick={next}
+  aria-label="Next"
+>
+  <span className="dh-arrow-triangle dh-arrow-triangle-right" />
+</button>
 
     </div>
   );
@@ -179,10 +179,17 @@ export default function DholeraProperties() {
 
 
 .dh-section-underline{
-  width:3.2rem;
-  height:.18rem;
-  background:#D7172A;
-  margin:0 auto 1rem;
+  width:min(90%, 420px);
+  height:3px;
+  margin:0 auto 1.4rem;
+  background:linear-gradient(
+    to right,
+    transparent 0%,
+    #1A3041 30%,
+    #1A3041 70%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 1px 2px rgba(26,48,65,0.35));
 }
 
 
@@ -204,24 +211,43 @@ export default function DholeraProperties() {
   align-items:center;
   gap:.8rem;
   margin:1.8rem 0 1rem;
+  transform: translate(-64px, 110px);
 }
 
 
 .dh-group-label{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:7rem;
   background:#D7172A;
   color:#fff;
-  padding:.75rem 1.8rem;
+  padding:.75rem .2rem 1.9rem;
   font-family:"Playfair Display",serif;
   font-size:clamp(.95rem,1.4vw,1.15rem);
   font-weight:700;
+  text-align:center;
+}
+
+.dh-group-label::after{
+  content:"";
+  position:absolute;
+  left:1.8rem;
+  bottom:.7rem;
+  width:1.6rem;
+  height:2px;
+  background:#fff;
 }
 
 
-.dh-group-arrow{
+.dh-group-arrow-new{
+  position:relative;
+  display:inline-block;
   color:#D7172A;
-  font-size:1.3rem;
+  font-size:2.5rem;
+  transform: translate(0px, -20px);
 }
-
 
 
 /* ===========================
@@ -250,9 +276,9 @@ export default function DholeraProperties() {
 
   font-family:"Playfair Display",serif;
 
-  font-size:clamp(1.05rem,2vw,1.45rem);
+  font-size:clamp(1.3rem,2.6vw,1.85rem);
 
-  font-weight:600;
+  font-weight:700;
 
   margin-bottom:1.3rem;
 
@@ -263,7 +289,7 @@ export default function DholeraProperties() {
 }
 
 
-.dh-plot-size.highlight::after{
+.dh-plot-size::after{
 
   content:"";
 
@@ -330,23 +356,23 @@ export default function DholeraProperties() {
 }
 
 
-.dh-arrow-left{
-
-  color:#D7172A;
-
-  font-size:clamp(1rem,2vw,1.3rem);
-
+.dh-arrow-triangle{
+  display:inline-block;
+  width:0;
+  height:0;
 }
 
-
-.dh-arrow-right{
-
-  color:#1A3041;
-
-  font-size:clamp(.9rem,1.8vw,1.15rem);
-
+.dh-arrow-triangle-left{
+  border-top:clamp(.4rem,1.1vw,.55rem) solid transparent;
+  border-bottom:clamp(.4rem,1.1vw,.55rem) solid transparent;
+  border-right:clamp(.5rem,1.3vw,.65rem) solid #1A3041;
 }
 
+.dh-arrow-triangle-right{
+  border-top:clamp(.4rem,1.1vw,.55rem) solid transparent;
+  border-bottom:clamp(.4rem,1.1vw,.55rem) solid transparent;
+  border-left:clamp(.5rem,1.3vw,.65rem) solid #1A3041;
+}
 
 
 /* ===========================
@@ -518,6 +544,13 @@ export default function DholeraProperties() {
 }
 
 
+.dh-group-label-row{
+
+  transform: translate(-32px, 60px);
+
+}
+
+
 }
 
 
@@ -560,6 +593,26 @@ export default function DholeraProperties() {
 }
 
 
+.dh-arrow-triangle-left{
+  border-top:.4rem solid transparent;
+  border-bottom:.4rem solid transparent;
+  border-right:.5rem solid #1A3041;
+}
+
+.dh-arrow-triangle-right{
+  border-top:.4rem solid transparent;
+  border-bottom:.4rem solid transparent;
+  border-left:.5rem solid #1A3041;
+}
+
+
+.dh-group-label-row{
+
+  transform: translate(0px, 20px);
+
+}
+
+
 }
 
 
@@ -575,9 +628,18 @@ export default function DholeraProperties() {
 
 .dh-group-label{
 
-  padding:.55rem 1rem;
+  padding:.55rem 1rem .9rem;
 
   font-size:.85rem;
+
+}
+
+
+.dh-group-label::after{
+
+  left:1rem;
+
+  width:1.2rem;
 
 }
 
@@ -599,6 +661,26 @@ export default function DholeraProperties() {
 .dh-stripes{
 
   width:3.5rem;
+
+}
+
+
+.dh-arrow-triangle-left{
+  border-top:.32rem solid transparent;
+  border-bottom:.32rem solid transparent;
+  border-right:.4rem solid #1A3041;
+}
+
+.dh-arrow-triangle-right{
+  border-top:.32rem solid transparent;
+  border-bottom:.32rem solid transparent;
+  border-left:.4rem solid #1A3041;
+}
+
+
+.dh-group-label-row{
+
+  transform: translate(0px, 12px);
 
 }
 
@@ -655,7 +737,7 @@ export default function DholeraProperties() {
 
 
 
-                <span className="dh-group-arrow">
+              <span className="dh-group-arrow-new">
 
                   &#8594;
 

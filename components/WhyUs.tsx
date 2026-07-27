@@ -28,7 +28,7 @@ export default function WhyUs() {
         }
         .why-us-card {
           position: relative;
-          width: 250px;
+          width: 230px;
         }
         .why-us-card-img {
           position: relative;

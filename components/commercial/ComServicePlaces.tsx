@@ -32,7 +32,7 @@ const projects = [
   },
   {
     id: 4,
-    location: "Zirkpur",
+    location: "Zirakpur",
     name: "The Silicon Courtyard",
     description: "The Silicon Courtyard redefines commercial real estate in Ambala by blending a vibrant high-street retail experience with corporate office spaces. Driven by heavy highway traffic and a captive upscale clientele, it serves as a central hub for entertainment, dining, and business. Investing here secures a spot in the region's fast-growing commercial corridor with high growth potential.",
     images: ["", "", "", ""],
@@ -304,7 +304,7 @@ export default function ComServicePlaces() {
                   className="rp-location"
                   data-text={project.location}
                   ref={(el) => { locationRefs.current[pi] = el; }}
-                  style={project.location === "Zirkpur" ? { marginTop: "100px" } : undefined}
+                  style={project.location === "Zirakpur" ? { marginTop: "100px" } : undefined}
                 >
                   <AnimatedLocationText text={project.location} />
                   <span className="rp-spark" />

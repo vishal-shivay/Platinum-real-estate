@@ -301,14 +301,14 @@ export default function CityShowcase() {
                 <p className="city-panel-line">{city.line}</p>
               </div>
 
-              <div
-                className={`city-panel-cursor${cursorCityId === city.name ? " active" : ""}`}
-                style={{
-                  transform: `translate(${cursorPos.x}px, ${cursorPos.y}px) translate(-50%, -50%) scale(${cursorCityId === city.name ? 1 : 0})`,
-                }}
-              >
-                
-              </div>
+             <div
+  className={`city-panel-cursor${cursorCityId === city.name ? " active" : ""}`}
+  style={{
+    transform: `translate(${cursorPos.x}px, ${cursorPos.y}px) translate(-50%, -50%) scale(${cursorCityId === city.name ? 1 : 0})`,
+  }}
+>
+  View
+</div>
             </Link>
           ))}
         </div>

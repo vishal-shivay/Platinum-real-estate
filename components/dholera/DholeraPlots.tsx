@@ -9,7 +9,7 @@ export default function DholeraPlots() {
         .dh-plots{
           position:relative;
           background:#fff;
-          padding:0 clamp(16px, 4vw, 40px) 80px;
+          padding:0 clamp(16px, 4vw, 40px) 0px;
           z-index:20;
           isolation:isolate;
         }

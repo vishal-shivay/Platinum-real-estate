@@ -183,7 +183,7 @@ export default function Footer() {
       <style>{`
         .footer {  font-family:Montserrat; background:rgb(26,48,68); position: relative; width: 100%; min-height: 350px; background-size: cover; background-position: center -120px; background-repeat: no-repeat; padding: 0 80px 40px; box-sizing: border-box; }
         .footer-top-space { height: 310px; }
-        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1400px; width: 100%; margin: 80px auto 0px; gap: 20px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1400px; width: 100%; margin: 0px auto 0px; gap: 20px; }
         .col { display: flex; flex-direction: column; }
         .col-1 { flex: 0 0 240px; }
         .col-2 { flex: 0 0 150px; padding-top: 4px; }
