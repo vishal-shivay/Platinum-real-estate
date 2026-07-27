@@ -9,6 +9,8 @@ const features = [
   "Verified and\npremium\nlistings",
 ];
 
+
+
 export default function WhyUs() {
   return (
     <>
