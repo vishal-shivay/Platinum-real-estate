@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const carouselImages = [
-  "/dholera/interior-1.jpg",
+  "/dholera/interior-1.jg",
 
 ];
 
