@@ -75,14 +75,6 @@ export default async function BlogPostPage({
         </article>
       </div>
       <Footer />
-      <style jsx global>{`
-        .post-body p {
-          margin: 0 0 20px 0;
-        }
-        .post-body p:last-child {
-          margin-bottom: 0;
-        }
-      `}</style>
     </>
   );
 }

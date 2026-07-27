@@ -5,8 +5,10 @@ export default function ContactMap() {
         .contact-map {
           width: 100%;
           height: 380px;
-          background: #e5e7eb;
-          margin:20px 0
+          background: white;
+          margin: 20px 0;
+          padding: 0 51px 40px;
+          box-sizing: border-box;
         }
         .contact-map iframe {
           display: block;
@@ -14,8 +16,11 @@ export default function ContactMap() {
           height: 100%;
           border: 0;
         }
+        @media (max-width: 1024px) {
+          .contact-map { padding: 0 40px; }
+        }
         @media (max-width: 768px) {
-          .contact-map { height: 300px; }
+          .contact-map { height: 300px; padding: 0 20px; }
         }
       `}</style>
 

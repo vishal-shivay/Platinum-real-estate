@@ -75,7 +75,7 @@ export default function ContactForm() {
           grid-template-columns: 1fr 1fr;
           gap: 64px;
           
-          max-width: 1100px;
+          max-width: 1400px;
           margin: 0 auto;
         }
 
@@ -102,16 +102,9 @@ export default function ContactForm() {
           margin: 0 0 16px;
         }
         .contact-form-section__quote-line {
-          width: 48px;
-          height: 3px;
-           background: linear-gradient(
-    to right,
-    #ffffff 0%,
-    #ffffff 15%,
-    #D7172A 50%,
-    #ffffff 85%,
-    #ffffff 100%
-  );
+          width: 200px;
+          height: 2px;
+           background:#D7172A
         }
         .contact-form__header-line {
           width: 202px;
@@ -238,7 +231,7 @@ export default function ContactForm() {
         <div className="contact-form-section__inner">
           <div>
             <h2 className="contact-form-section__quote">
-              Let&apos;s begin the conversation.
+              Let&apos;s begin the <br />conversation.
             </h2>
             <div className="contact-form-section__quote-line" />
           </div>

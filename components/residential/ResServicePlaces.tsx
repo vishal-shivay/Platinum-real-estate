@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   // {
@@ -274,6 +275,30 @@ const projects = [
   //   theme: "dark",
   //   bgImage: "/images/affinity-bg.png",
   // },
+    {    id: 31,
+    location: "",
+    name: "El Spazia Elite Spanish Homes",
+    description: "el spazia- El Spazia Elite Spanish Homes is a luxury residential society located directly on the PR7 International Airport Road in Zirakpur, Punjab. It features Spanish-themed architectural designs and sits right next to the Chandigarh-Ambala Expressway for seamless commuting. The property offers prime connectivity to Chandigarh International Airport alongside popular nearby retail and dining hubs.",
+    images: ["/images/Spazia1.jpeg","/images/Spazia2.jpeg", "/images/Spazia3.jpeg", "/images/Spazia4.jpeg", "/images/Spazia5.jpeg", "/images/Spazia6.jpeg",  ],
+    theme: "red",
+    bgImage: "/images/noble-bg.png",
+  },
+    {    id: 32,
+    location: "",
+    name: "Gulnaar Serene",
+    description: "Gulnaar Serene is an exclusively residential enclave offering ultra-spacious, 2-side-open 3+1 BHK luxury floors across 5 acres. The low-density project limits development to just 152 total units, guaranteeing high privacy with only two flats per floor. Families enjoy peaceful, private living centered around a 1.5-acre green park completely free from commercial or retail disruptions.",
+    images: ["/images/Serene1.jpeg","/images/Serene2.jpeg","/images/Serene3.jpeg","/images/Serene4.jpeg","/images/Serene5.jpeg","/images/Serene6.jpeg" ],
+    theme: "dark",
+    bgImage: "/images/affinity-bg.png",
+  },
+    {    id: 33,
+    location: "",
+    name: "Northview Homez",
+    description: "Northview Homez is a premium residential project located right on the Ambala-Chandigarh Highway in Zirakpur, Punjab, situated close to the local McDonald's. The development features modern 3 BHK apartments and sky villas built using earthquake-resistant Mivan technology. It offers residents excellent highway connectivity alongside upscale amenities like a private clubhouse, gym, and landscaped green spaces.",
+    images: ["/images/Homez1.jpeg", "/images/Homez2.jpeg","/images/Homez3.jpeg","/images/Homez4.jpeg","/images/Homez5.jpeg","/images/Homez6.jpeg" ],
+    theme: "red",
+    bgImage: "/images/noble-bg.png",
+  }
 ];
 
 // Splits a location name into individually animated letter spans
@@ -297,6 +322,18 @@ export default function ResServicePlaces() {
   const [indices, setIndices] = useState<number[]>(projects.map(() => 0));
   const locationRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  // Every project belongs to whichever location was last declared above it
+  // (only the first project of each city group sets `location`). This carries
+  // that group forward so every card — not just the header one — knows which
+  // city section on /residential it should deep-link to.
+  const projectGroupLocation = useMemo(() => {
+    let current = "";
+    return projects.map((p) => {
+      if (p.location) current = p.location;
+      return current;
+    });
+  }, []);
+
   const prev = (pi: number) => setIndices((prev) => prev.map((ci, i) => i === pi ? (ci === 0 ? projects[pi].images.length - 1 : ci - 1) : ci));
   const next = (pi: number) => setIndices((prev) => prev.map((ci, i) => i === pi ? (ci === projects[pi].images.length - 1 ? 0 : ci + 1) : ci));
 
@@ -307,6 +344,8 @@ export default function ResServicePlaces() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
+          } else {
+            entry.target.classList.remove("in-view");
           }
         });
       },
@@ -326,7 +365,7 @@ export default function ResServicePlaces() {
         .rp-section { background: #ffffff; padding: 60px 0 20px; }
         .rp-project { width: 90%; margin: 0 auto 18px; padding: 0 18px; text-align: center; }
 
-        /* ===== FANTASTIC 3D LOCATION HEADING ===== */
+        /* ===== UPGRADED 3D LOCATION HEADING ===== */
         .rp-location {
           position: relative;
           display: inline-block;
@@ -335,8 +374,9 @@ export default function ResServicePlaces() {
           margin-bottom: 34px;
           font-family: 'Playfair Display', serif;
           letter-spacing: 1px;
-          perspective: 900px;
-          overflow: hidden;
+          perspective: 1200px;
+          transform-style: preserve-3d;
+          overflow: visible;
         }
 
         .rp-location::after {
@@ -346,82 +386,108 @@ export default function ResServicePlaces() {
           bottom: -10px;
           width: 0;
           height: 3px;
-          background: linear-gradient(90deg, #d71920, #ffb703);
+          background: linear-gradient(90deg, #d71920, #ffb703, #d71920);
+          background-size: 200% 100%;
           transform: translateX(-50%);
-          box-shadow: 0 0 12px rgba(215,25,32,0.7), 0 0 24px rgba(255,183,3,0.4);
-          transition: width 0.9s cubic-bezier(0.16,1,0.3,1) 0.6s;
+          box-shadow: 0 0 14px rgba(215,25,32,0.75), 0 0 28px rgba(255,183,3,0.45);
+          transition: width 1s cubic-bezier(0.16,1,0.3,1) 0.7s;
+          border-radius: 2px;
         }
 
         .rp-location.in-view::after {
           width: 90px;
+          animation: rp-underline-shimmer 2.4s linear infinite 1.6s;
         }
 
-        /* Each letter starts flipped back in 3D space, tilted and dropped above */
+        /* traveling spark along the underline */
+        .rp-spark {
+          position: absolute;
+          left: 50%;
+          bottom: -11px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #fff5d6;
+          box-shadow: 0 0 10px 4px rgba(255,183,3,0.95), 0 0 22px 8px rgba(215,25,32,0.55);
+          opacity: 0;
+          transform: translate(-50%, 0);
+          pointer-events: none;
+        }
+
+        .rp-location.in-view .rp-spark {
+          animation: rp-spark-travel 1.5s cubic-bezier(0.5,0,0.5,1) 1.5s 1;
+        }
+
+        /* Each letter starts flipped back in 3D space, tilted, blurred, and dropped above */
         .rp-letter {
           display: inline-block;
           transform-style: preserve-3d;
           opacity: 0;
-          transform: translateY(-60px) rotateX(-90deg) scale(0.6);
-          background: linear-gradient(90deg, #a80f16, #ff3b3b, #ffb703, #ff3b3b, #a80f16);
-          background-size: 300% 100%;
+          transform: translateY(-70px) rotateX(-110deg) rotateY(25deg) scale(0.3) skewX(6deg);
+          filter: blur(12px);
+          background: linear-gradient(90deg, #7a0d12, #d71920, #ff5252, #ffb703, #ff5252, #d71920, #7a0d12);
+          background-size: 400% 100%;
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
           color: #d71920;
-          text-shadow: 0 8px 18px rgba(0,0,0,0.35);
-          transition: opacity 0.6s ease, transform 0.75s cubic-bezier(0.34,1.56,0.64,1);
-          transition-delay: calc(var(--i) * 45ms);
+          transition: opacity 0.55s ease, transform 0.95s cubic-bezier(0.34,1.56,0.64,1), filter 0.75s ease;
+          transition-delay: calc(var(--i) * 50ms);
         }
 
         .rp-location.in-view .rp-letter {
           opacity: 1;
-          transform: translateY(0) rotateX(0deg) scale(1);
+          transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1) skewX(0deg);
+          filter: blur(0);
           animation:
-            rp-gradient-move 4.5s linear infinite calc(var(--i) * 45ms),
-            rp-glow-pulse 2.6s ease-in-out infinite calc(var(--i) * 45ms + 0.8s);
+            rp-gradient-move 4.5s linear infinite calc(var(--i) * 50ms),
+            rp-glow-pulse 2.6s ease-in-out infinite calc(var(--i) * 50ms + 0.9s),
+            rp-letter-float 3.4s ease-in-out infinite calc(var(--i) * 90ms + 1.4s);
         }
 
         @keyframes rp-gradient-move {
           0% { background-position: 0% 50%; }
-          100% { background-position: 300% 50%; }
+          100% { background-position: 400% 50%; }
         }
 
         @keyframes rp-glow-pulse {
           0%, 100% {
-            text-shadow: 0 0 14px rgba(215,25,32,0.35), 0 0 28px rgba(255,183,3,0.15);
+            text-shadow:
+              1px 1px 0 rgba(168,15,22,0.45),
+              2px 2px 0 rgba(168,15,22,0.35),
+              3px 3px 4px rgba(0,0,0,0.3),
+              0 0 14px rgba(215,25,32,0.35), 0 0 28px rgba(255,183,3,0.15);
           }
           50% {
-            text-shadow: 0 0 26px rgba(215,25,32,0.65), 0 0 48px rgba(255,183,3,0.4);
+            text-shadow:
+              1px 1px 0 rgba(168,15,22,0.6),
+              2px 2px 0 rgba(168,15,22,0.5),
+              3px 3px 6px rgba(0,0,0,0.4),
+              0 0 28px rgba(215,25,32,0.7), 0 0 52px rgba(255,183,3,0.45);
           }
         }
 
-        /* Shine sweep once all letters have landed */
-        .rp-shine {
-          position: absolute;
-          top: 0;
-          left: -60%;
-          width: 40%;
-          height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
-          transform: skewX(-20deg);
-          pointer-events: none;
-          opacity: 0;
+        @keyframes rp-letter-float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
         }
 
-        .rp-location.in-view .rp-shine {
-          animation: rp-shine-sweep 1.4s ease-in-out 1.1s 1;
+        @keyframes rp-underline-shimmer {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
         }
 
-        @keyframes rp-shine-sweep {
-          0% { left: -60%; opacity: 0; }
-          15% { opacity: 0.9; }
-          60% { opacity: 0.4; }
-          100% { left: 130%; opacity: 0; }
+        @keyframes rp-spark-travel {
+          0%   { transform: translate(calc(-50% - 45px), 0) scale(0.4); opacity: 0; }
+          12%  { opacity: 1; }
+          50%  { transform: translate(-50%, 0) scale(1.4); }
+          88%  { opacity: 1; }
+          100% { transform: translate(calc(-50% + 45px), 0) scale(0.4); opacity: 0; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .rp-letter { transition: opacity 0.4s ease; transform: none !important; animation: none !important; }
-          .rp-shine { display: none; }
+          .rp-letter { transition: opacity 0.4s ease; transform: none !important; animation: none !important; filter: none !important; }
+          .rp-spark, .rp-location.in-view::after { animation: none !important; }
         }
         /* ===== END LOCATION HEADING ===== */
 
@@ -433,19 +499,59 @@ export default function ResServicePlaces() {
         .rp-title { color: #fff; font-family: Playfair Display; font-size: 32px; font-weight: 700; margin-top: 6px; margin-bottom: 18px; text-align: center; line-height: 1; }
         .rp-description { color: #efefef; width: 94%; margin: 0 auto; text-align: left; font-size: 15px; line-height: 1.35; font-weight: 400; margin-bottom: 42px; }
         .rp-slider { width: 100%; display: flex; align-items: center; justify-content: space-between; }
-        .rp-arrow { width: 44px; height: 44px; border: none; background: none; color: #e21828; font-size: 42px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: .25s; user-select: none; }
+        .rp-arrow {
+          width: 44px; height: 44px; border: none; background: none;
+          cursor: pointer; display: flex; justify-content: center; align-items: center;
+          transition: transform .25s ease, opacity .2s ease; user-select: none; padding: 0;
+          flex-shrink: 0;
+        }
         .rp-arrow:hover { transform: scale(1.15); }
+        .rp-arrow:active { transform: scale(0.95); }
+        .rp-arrow .rp-tri {
+          width: 0; height: 0;
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-left: 22px solid #df1b27;
+        }
+        .rp-arrow.rp-arrow-prev .rp-tri { transform: rotate(180deg); }
+        @media (max-width: 768px) {
+          .rp-arrow .rp-tri { border-top-width: 11px; border-bottom-width: 11px; border-left-width: 16px; }
+        }
         .rp-images { width: 100%; display: flex; justify-content: center; gap: 18px; }
         .rp-image-box { position: relative; width: 238px; height: 182px;border-right: 2px solid #df1b27;  border-left: 2px solid #df1b27; overflow: hidden; flex-shrink: 0; }
         .rp-image-box img { transition: .35s; }
         .rp-image-box:hover img { transform: scale(1.05); }
+
+        /* ---------- Link to /residential's Mohali / Zirakpur section ---------- */
+        .rp-location-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-top: 26px;
+          background: #d71920;
+          color: #fff;
+          text-decoration: none;
+          font-family: "Montserrat", sans-serif;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          padding: 12px 24px;
+          border-radius: 2px;
+          transition: background 0.25s ease, transform 0.2s ease;
+        }
+        .rp-location-btn:hover { background: #ff2d3f; transform: translateY(-1px); }
+        .rp-location-btn:active { transform: translateY(0); }
+
         @media(max-width:1200px){ .rp-card{ height:auto; padding-bottom:40px; } .rp-images{ flex-wrap:wrap; } }
         @media(max-width:992px){ .rp-location{ font-size:38px; } .rp-title{ font-size:28px; } .rp-description{ font-size:14px; width:95%; } .rp-image-box{ width:210px; height:160px; } }
         @media(max-width:768px){
           .rp-project { width: 100%; margin: 0 auto 0px; padding: 0 0px;  }
         .rp-location{ font-size:32px; }
         .rp-card{ padding-bottom:30px; }
-         .rp-slider{ flex-direction:column; gap:20px; }
+         /* FIX: keep the slider as a row so arrows sit on the left/right of the
+            image grid instead of stacking above/below it (was flex-direction:column) */
+         .rp-slider{ flex-direction:row; align-items:center; gap:8px; }
           .rp-arrow{ font-size:30px; }
            .rp-images{ width:100%; justify-content:center; gap:14px; }
             .rp-image-box{ width:46%; height:180px; } 
@@ -458,6 +564,7 @@ export default function ResServicePlaces() {
         {projects.map((project, pi) => {
           const start = indices[pi];
           const visibleImages = [0,1,2,3].map(i => project.images[(start + i) % project.images.length]);
+          const groupLocation = projectGroupLocation[pi];
 
           return (
             <div className="rp-project" key={project.id} id={project.location}>
@@ -468,7 +575,7 @@ export default function ResServicePlaces() {
                   ref={(el) => { locationRefs.current[pi] = el; }}
                 >
                   <AnimatedLocationText text={project.location} />
-                  <span className="rp-shine" />
+                  <span className="rp-spark" />
                 </div>
               )}
               <div className={`rp-card ${project.theme}`} style={{ backgroundImage: `url(${project.bgImage})` }}>
@@ -477,7 +584,9 @@ export default function ResServicePlaces() {
                   <h2 className="rp-title">{project.name}</h2>
                   <p className="rp-description">{project.description}</p>
                   <div className="rp-slider">
-                    <button className="rp-arrow" onClick={() => prev(pi)}>&#10094;</button>
+                    <button className="rp-arrow rp-arrow-prev" onClick={() => prev(pi)} aria-label="Previous images">
+                      <span className="rp-tri" />
+                    </button>
                     <div className="rp-images">
                       {visibleImages.map((img, index) => (
                         <div className="rp-image-box" key={index}>
@@ -485,8 +594,11 @@ export default function ResServicePlaces() {
                         </div>
                       ))}
                     </div>
-                    <button className="rp-arrow" onClick={() => next(pi)}>&#10095;</button>
+                    <button className="rp-arrow rp-arrow-next" onClick={() => next(pi)} aria-label="Next images">
+                      <span className="rp-tri" />
+                    </button>
                   </div>
+               
                 </div>
               </div>
             </div>

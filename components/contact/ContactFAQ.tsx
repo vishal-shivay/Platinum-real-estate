@@ -6,7 +6,7 @@ const FAQ_ITEMS = [
   {
     question: "Are all your properties legally verified?",
     answer:
-      "Yes. Every property undergoes a thorough verification process to ensure clear ownership, valid documentation, and compliance with applicable regulations.",
+      "Yes. Every property undergoes a thorough verification process to ensure clear ownership, valid\ndocumentation, and compliance with applicable\nregulations.",
   },
   {
     question: "Do you assist with financing or home loans?",
@@ -33,9 +33,9 @@ const FAQ_ITEMS = [
 function ChevronIcon({ open }: { open: boolean }) {
   return (
     <svg
-      width="10"
-      height="7"
-      viewBox="0 0 10 7"
+      width="13"
+      height="11"
+      viewBox="0 0 13 11"
       fill="none"
       aria-hidden="true"
       style={{
@@ -44,7 +44,8 @@ function ChevronIcon({ open }: { open: boolean }) {
         transition: "transform 0.25s ease",
       }}
     >
-      <path d="M1 1L5 5L9 1" stroke="#D7172A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Solid triangle, apex up by default; rotates 180deg to point down when open */}
+      <polygon points="6.5,0 13,10.5 0,10.5" fill="#D7172A" />
     </svg>
   );
 }
@@ -76,7 +77,7 @@ export default function ContactFAQ() {
           margin: 0 0 12px;
         }
         .contact-faq__underline {
-          width: 48px;
+          width: 148px;
           height: 2px;
           background: #f0b8bc;
           margin-bottom: 20px;
@@ -141,6 +142,7 @@ export default function ContactFAQ() {
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          margin-top:20px;
         }
         .contact-faq__body {
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -175,6 +177,7 @@ export default function ContactFAQ() {
           color: rgba(255, 255, 255, 0.5);
           padding: 0 24px 14px 0;
           margin: 0;
+          white-space: pre-line;
          
         }
         @media (max-width: 1024px) {
@@ -195,6 +198,9 @@ export default function ContactFAQ() {
           }
           .contact-faq__row {
             grid-template-columns: 60px 1fr;
+          }
+          .contact-faq__answer {
+            white-space: normal;
           }
         }
       `}</style>

@@ -90,10 +90,10 @@ export default function ContactInfo() {
           padding-top: 4px;
         }
         .contact-info__label {
-          font-size: 11px;
-          font-weight: 500;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
+          font-size: 13px;
+          font-weight: 400;
+          letter-spacing: normal;
+          text-transform: none;
           color: #9ca3af;
           margin: 0 0 10px;
         }
@@ -106,7 +106,7 @@ export default function ContactInfo() {
           line-height: 1.2;
         }
         .contact-info__underline {
-          width: 120px;
+          width: 144px;
           height: 2px;
           background: #D7172A;
           margin-bottom: 22px;
@@ -118,11 +118,19 @@ export default function ContactInfo() {
           max-width: 400px;
           margin: 0 0 32px;
         }
+        .contact-info__body-line {
+          display: block;
+        }
+        @media (max-width: 480px) {
+          .contact-info__body-line {
+            display: inline;
+          }
+        }
         .contact-info__details {
           display: flex;
           flex-direction: column;
           gap: 16px;
-          margin-bottom: 36px;
+          margin-bottom: 24px;
         }
         .contact-info__detail {
           display: flex;
@@ -134,12 +142,18 @@ export default function ContactInfo() {
         .contact-info__detail svg {
           flex-shrink: 0;
           margin-top: 2px;
-          color: #D7172A;
+          color: #1A3041;
+        }
+        .contact-info__social-rule {
+          width: 50%;
+          height: 1px;
+          background: linear-gradient(90deg, rgba(215,23,42,0) 0%, #D7172A 50%, rgba(215,23,42,0) 100%);
+          margin: 8px 0 22px;
         }
         .contact-info__social-label {
           font-size: 14px;
           font-weight: 600;
-          color: #1a1a1a;
+          color: #1A3041;
           margin: 0 0 12px;
         }
         .contact-info__socials {
@@ -154,7 +168,7 @@ export default function ContactInfo() {
           height: 34px;
           border-radius: 50%;
           border: 1px solid #d1d5db;
-          color: #6b7280;
+          color: #1A3041;
           transition: border-color 0.2s, color 0.2s;
         }
         .contact-info__social:hover {
@@ -180,7 +194,7 @@ export default function ContactInfo() {
           position: absolute;
       
        
-          border:4px solid  #D7172A;
+          border:3px solid  #D7172A;
           border-bottom:none;
           background: #ffffff00;
           box-sizing: border-box;
@@ -200,7 +214,7 @@ export default function ContactInfo() {
           top: -70px;
           z-index: 1;
           border-radius: calc(var(--arch-w) / 2) calc(var(--arch-w) / 2) 0 0;
-          border: 4px solid #a3a0a0;
+          border: 3px solid #a3a0a0;
 
         }
 
@@ -238,7 +252,7 @@ export default function ContactInfo() {
              max-width: none !important;
 
              border-radius:200px 200px 00 0;
-             transform:translate(0 , 10px)
+             transform:translate(0 , 6px)
            
         }
 
@@ -345,9 +359,9 @@ export default function ContactInfo() {
               <h2 className="contact-info__heading">Get in Touch with Us</h2>
               <div className="contact-info__underline" />
               <p className="contact-info__body">
-                Whether you&apos;re searching for your next home or exploring
-                investment opportunities, our team is ready to help you every
-                step of the way.
+                <span className="contact-info__body-line">Whether you&apos;re searching for your next home or </span>
+                <span className="contact-info__body-line">exploring investment opportunities, our team is ready </span>
+                <span className="contact-info__body-line">to help you every step of the way.</span>
               </p>
 
               <div className="contact-info__details">
@@ -370,13 +384,14 @@ export default function ContactInfo() {
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                   <span>
-                    Shop No. 8, Bindra Complex,
-                    Jagadhri Gate, Patti Mehar,
+                    Shop No. 8, Bindra Complex,<br />
+                    Jagadhri Gate, Patti Mehar,<br />
                     Ambala, Haryana 134003
                   </span>
                 </div>
               </div>
 
+              <div className="contact-info__social-rule" />
               <p className="contact-info__social-label">Follow Us:</p>
            <div className="contact-info__socials">
   <a

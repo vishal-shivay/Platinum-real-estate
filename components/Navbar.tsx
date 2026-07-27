@@ -186,6 +186,7 @@ export default function Navbar() {
                   <Link href="/residential" className={pathname === "/residential" ? "active" : ""}>Residential</Link>
                 </div>
               </div>
+              <Link href="/dholera" className={pathname === "/dholera" ? "active" : ""}>Dholera</Link>
               <Link href="/blog" className={pathname === "/blog" ? "active" : ""}>Blog</Link>
               <Link href="/contact" className={pathname === "/contact" ? "active" : ""}>Contact Us</Link>
             </div>
@@ -217,6 +218,7 @@ export default function Navbar() {
             <Link href="/residential" className={pathname === "/residential" ? "active" : ""} onClick={() => setMenuOpen(false)}>Residential</Link>
           </div>
 
+          <Link href="/dholera" className={pathname === "/dholera" ? "active" : ""} onClick={() => setMenuOpen(false)}>Dholera</Link>
           <Link href="/blog" className={pathname === "/blog" ? "active" : ""} onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link href="/contact" className={pathname === "/contact" ? "active" : ""} onClick={() => setMenuOpen(false)}>Contact Us</Link>
           <Link href="/contact" className="mobile-contact-btn" onClick={() => setMenuOpen(false)}>Contact</Link>
