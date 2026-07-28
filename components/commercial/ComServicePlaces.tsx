@@ -8,7 +8,7 @@ const projects = [
     location: "Mohali",
     name: "RGI Grand Carnival",
     description: "RGI Grand Carnival is a premium commercial high-street project located on Airport Road in Aerocity, Mohali [rgigrandcarnival.com]. Developed by RGI Infra, the under-construction complex features a mix of double-height showrooms, modern office spaces, and a massive food court area. It offers premium amenities like ample parking, high-speed lifts, and excellent connectivity to the international airport.",
-    images: ["/images/a1.jpg", "", "", ""],
+    images: ["", "", "", ""],
     theme: "dark",
     bgImage: "/images/com1-bg.png",
   },
@@ -88,7 +88,7 @@ function ParticleBurst({
   onDone,
 }: {
   src: string;
-  boxRef: React.RefObject<HTMLDivElement>;
+  boxRef: { current: HTMLDivElement | null };
   targetParticleCount: number;
   onDone: () => void;
 }) {
