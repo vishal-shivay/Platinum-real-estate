@@ -234,7 +234,7 @@ function ParticleBurst({
   onDone,
 }: {
   src: string;
-  boxRef: React.RefObject<HTMLDivElement>;
+  boxRef: { current: HTMLDivElement | null };
   targetParticleCount: number;
   onDone: () => void;
 }) {
