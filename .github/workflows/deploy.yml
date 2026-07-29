@@ -1,38 +1,18 @@
-name: Deploy to VPS
+with:
+  host: ${{ secrets.HOST }}
+  username: ${{ secrets.USERNAME }}
+  port: ${{ secrets.PORT }}
+  key: ${{ secrets.SSH_PRIVATE_KEY }}
+  timeout: 60s
+  command_timeout: 20m
 
-on:
-  push:
-    branches:
-      - main
+  script: |
+    set -e
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+    cd /var/www/Platinum-real-estate
 
-    steps:
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.2.2
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            set -e
-
-            cd /var/www/Platinum-real-estate
-
-            echo "📥 Pulling latest code..."
-            git pull origin main
-
-            echo "📦 Installing dependencies..."
-            npm install
-
-            echo "🏗️ Building application..."
-            npm run build
-
-            echo "🚀 Restarting PM2..."
-            pm2 restart platinum-realtors
-
-            pm2 save
-
-            echo "✅ Deployment completed successfully!"
+    git pull origin main
+    npm install
+    npm run build
+    pm2 restart platinum-realtors
+    pm2 save
