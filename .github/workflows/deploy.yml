@@ -1,42 +1,30 @@
-name: Deploy to VPS
+script: |
+  set -e
 
-on:
-  push:
-    branches:
-      - main
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  nvm use 22
 
-    steps:
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.2.2
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: 22
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          timeout: 60s
-          command_timeout: 20m
+  echo "Node version:"
+  node -v
+  echo "NPM version:"
+  npm -v
 
-          script: |
-            set -e
+  cd /var/www/Platinum-real-estate
 
-            cd /var/www/Platinum-real-estate
+  echo "📥 Pulling latest code..."
+  git pull origin main
 
-            echo "📥 Pulling latest code..."
-            git pull origin main
+  echo "📦 Installing dependencies..."
+  npm install
 
-            echo "📦 Installing dependencies..."
-            npm install
+  echo "🏗️ Building application..."
+  npm run build
 
-            echo "🏗️ Building application..."
-            npm run build
+  echo "🚀 Restarting PM2..."
+  pm2 restart platinum-realtors
 
-            echo "🚀 Restarting PM2..."
-            pm2 restart platinum-realtors
+  pm2 save
 
-            pm2 save
-
-            echo "✅ Deployment completed!"
+  echo "✅ Deployment completed!"
