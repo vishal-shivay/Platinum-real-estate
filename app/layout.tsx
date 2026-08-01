@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-
 export const metadata: Metadata = {
   title: "Platinum Realtors",
   description: "Turning Dreams Into Addresses",
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icons/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
+  },
+
+  manifest: "/icons/site.webmanifest",
 };
 
 export default function RootLayout({
